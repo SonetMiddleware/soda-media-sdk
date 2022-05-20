@@ -1,12 +1,16 @@
 const _mediaTypes = {}
 
-const getMediaTypes = function (types?:string[]) {
+const getMediaTypes = function (types?: string[]) {
   if (!types || types.length === 0) return _mediaTypes
   const ret = {}
   for (const key of types) {
     ret[key] = _mediaTypes[key] || null
   }
   return ret
+}
+
+export const getMediaType = (type: string) => {
+  return _mediaTypes[type]
 }
 
 export type MediaType = {

@@ -17,7 +17,9 @@
   },
   "author": "EuclidTwin",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/runtime": "^7.17.9"
+  },
   "devDependencies": {
     "eslint": "^7.7.0",
     "father-build": "^1.21.2",

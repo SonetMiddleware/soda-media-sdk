@@ -4,13 +4,13 @@ const getCacheImage = async (source: string, attachInfo?: string) => {
   return source
 }
 
-const render = async (source: string, dom: HTMLDivElement, config?: any) => {
+const render = async (source: any, dom: HTMLDivElement, config?: any) => {
   if (config && config.replace) {
     //@ts-ignore
-    dom.src = source
+    dom.src = source.uri ? source.uri : source
   } else {
     const img = document.createElement('img')
-    img.src = source
+    img.src = source.uri ? source.uri : source
     img.style.cssText = config.css
     if (config && config.insertBefore) {
       dom.parentElement.insertBefore(img, dom)
